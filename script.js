@@ -4,24 +4,31 @@ var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'
 var upperCase = []
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,]
 var specialCharacters = ['+', '-', '!', '@', '#', '%', '&', '*', '?']
-var newPass = "";
+var newPassword = lowerCase + upperCase + numbers + specialCharacters;
 
 
-function generatePassword()
-  var passwordLength = window.prompt("Enter desired password length.");
+function generatePassword() {
+  var passwordLength = window.prompt(
+    "Enter desired password length."
+  );
 
   if (passwordLength < 8 || passwordLength > 128) {
-    console.log("invalid")
-    window.alert("To generate password please choose a number beyween 8 and 128.");
-  
+  console.log("invalid")
+  window.alert("To generate password please choose a number beyween 8 and 128.");
+  return generatePassword();
+  }
+  if (passwordLength >= 8 && passwordLength <= 128) {
     var lowerCaseConfirm = window.confirm("Include lowercase letters? (ook for yes, cancel for no)");
     var upperCaseConfirm = window.confirm("Include upperclase letters?(ok for yes, cancel for no)");
     var specialCharactersConfirm = window.confirm("Include special characters?(ok for yes, cancel for no)");
     var numbersConfirm = window.confirm("Include numbers?(ok for yes, cancel for no)");
+  }
 
-    console.log(lowerCaseConfirm, upperCaseConfirm, specialCharactersConfirm, numbersConfirm)
+  
 
-   
+
+
+
 
 
 
