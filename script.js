@@ -13,9 +13,9 @@ function generatePassword() {
   );
 
   if (passwordLength < 8 || passwordLength > 128) {
-  console.log("invalid")
-  window.alert("To generate password please choose a number beyween 8 and 128.");
-  return generatePassword();
+    console.log("invalid")
+    window.alert("To generate password please choose a number beyween 8 and 128.");
+    return generatePassword();
   }
   if (passwordLength >= 8 && passwordLength <= 128) {
     var lowerCaseConfirm = window.confirm("Include lowercase letters? (ook for yes, cancel for no)");
@@ -24,13 +24,14 @@ function generatePassword() {
     var numbersConfirm = window.confirm("Include numbers?(ok for yes, cancel for no)");
   }
 
-  
-
-
-
-
-
-
+  var password = "";
+  for (var index = 0; index < passwordLength; index++) {
+    var trueRandom =
+      newPassword[Math.floor(Math.random() * newPassword.passwordLength)];
+    password += trueRandom;
+  }
+  return password;
+}
 
 
 
@@ -50,4 +51,4 @@ function generatePassword() {
 
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
-}
+
